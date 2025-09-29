@@ -153,3 +153,4 @@ def test_get_expense_in_usd_formato_invalido():
     expense = Expense(id=1, description="Teste", amount=100.0, category="cat", date=date.today())
     usd_amount = get_expense_in_usd(expense)
     assert usd_amount is None
+ #Comentario#
