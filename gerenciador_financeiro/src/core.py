@@ -42,3 +42,18 @@ class ExpenseRepository:
         """Retorna todas as despesas."""
         return self._expenses        
 
+# ... (classes Expense e ExpenseRepository continuam aqui) ...
+class FinancialManager:
+    """Gerencia as operações financeiras, usando um repositório."""
+    def __init__(self, repository: ExpenseRepository):
+        self._repository = repository
+
+    def add_expense(self, expense_data: dict) -> Expense:
+        """Adiciona uma nova despesa através do repositório."""
+        # Delega a criação e armazenamento para o repositório
+        return self._repository.add(expense_data)
+
+    def get_total_expenses(self) -> float:
+        """Calcula o valor total de todas as despesas."""
+        all_expenses = self._repository.get_all()
+        return sum(expense.amount for expense in all_expenses)

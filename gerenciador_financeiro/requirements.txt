@@ -1,2 +1,6 @@
 pydantic
 pytest
+
+pydantic
+pytest
+pytest-mock # Adicionar esta linha
